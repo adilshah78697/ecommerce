@@ -1,0 +1,184 @@
+@import '../../global.scss';
+.home{
+  position: relative;
+  top: 60px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  
+  .overlay{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.2;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    mix-blend-mode: hard-light;
+    
+  }
+  video{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    object-fit: cover;
+    
+  }
+  .homeContent{
+    width: 100%;
+    height: max-content;
+    padding: 8rem 1.5rem 3rem;
+    z-index: 100;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    row-gap: 3rem;
+    flex-direction: column;
+    color: $WhiteColor;
+    
+    .textDiv{
+      // position: absolute;
+        padding: 2rem 0;
+        margin-top: -150px;
+        @include mobile{
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .smallText{
+            font-size: 13px;
+            text-transform: uppercase;
+            @include mobile{
+              text-align: center;
+            }
+        }
+        .homeTitle{
+            position: relative;
+            font-size: 1.8rem;
+            @include mobile{
+              font-size: 1.5rem;
+              text-align: center;
+            }
+        }
+    }
+    .cardDiv{
+        position: relative;
+        padding: 3rem 1rem;
+        margin-top: -20px;
+        margin-right: 3px;
+        justify-content: center;
+        background-color: $WhiteColor;
+        border-radius: 10px;
+        @include mobile{
+          flex-direction: column;
+          padding: 10px;
+          padding: 50px 0;
+          
+          
+        }
+        .allInput{
+          width: 350px;
+          margin-right: 20px;
+          @include mobile{
+            width: 70vw;
+            margin: 0;
+          }
+          
+          label{
+            display: block;
+            color: $textColor;
+            padding-bottom: 10px;
+            font-weight: 500;
+            margin-left: 5px;
+            @include mobile{
+              font-size: 1.1rem;
+            }
+        }
+        .label_total{
+            justify-content: space-between;
+            align-items: center;
+            .total{
+              color: $textColor;
+              font-size: 18px;
+              margin-bottom: 10px;
+            }
+        }
+        .input{
+          height: 40px;
+          padding: 1rem;
+          width: 100%;
+          background-color: $inputColor;
+          border-radius: 3rem;
+          margin-right: 10px;
+          input{
+            background: none;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 13px;
+            font-weight: 500;
+            &::placeholder{
+              font-size: 13px;
+            }
+
+          }
+          .icon{
+            font-size: 18px;
+            color: $PrimaryColor
+            !important;
+            margin-left: 10px;
+
+          }
+          .input[type=range]{
+            background-color: rgb(12, 8, 241);
+            
+          }
+        }
+        }
+        
+        .searchOptions{
+          position: absolute;
+          background: $GradiantColor;
+          width: max-content;
+          bottom: -0.7rem;
+          column-gap: 0.8rem;
+          padding: 5px 1rem;
+          border-radius: 3rem;
+          left: 50%;
+          transform: translate(-50%);
+          justify-content: center;
+          cursor: pointer;
+          &:hover{
+            background-color: $PrimaryColor;
+          }
+          .icon{
+            font-size: 18px;
+          }
+          span{
+            font-size: -13px;
+          }
+        }
+    }
+    .homeFooterIcons{
+      width: 100%;
+      justify-content: space-between;
+      .icon{
+        font-size: 20px;
+        margin:0 5px;
+        color: $WhiteColor;
+        font-weight: 600;
+        &:hover{
+          color: $PrimaryColor;
+          
+        }
+      }
+    }
+  }
+}

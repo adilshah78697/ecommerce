@@ -1,0 +1,165 @@
+@import '../../global.scss';
+
+.main{
+
+    @include mobile{
+        padding: 30px 0;
+
+        margin: 0;
+        width: 100%;
+    }
+    .secTitle{
+        display: flex;
+        justify-content: center;
+
+        .title{
+            position: relative;
+            width:max-content;
+            color: $textColor;
+            margin: 1rem 0;
+            z-index: 2;
+            @include mobile{
+                margin-top: 4rem;
+                margin-bottom: 0;
+            }
+            &::after{
+                position: absolute;
+                content: "";
+                background: $SecondaryColor;
+                height: 5px;
+                width: 120px;
+                right: 0;
+                bottom: 5px;
+                z-index: -1;
+            }
+        }
+    }
+    .secContent{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        @include mobile{
+            display: block;
+            width: 100%;
+            padding: 0;
+            
+        }
+        .singleDestination{
+            height: 100%;
+            width: 30%;
+            
+            // display: grid;
+            row-gap: 10px;
+            border-radius: 10px;
+            align-items: center;
+            background-color: $cardBG;
+            box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+            overflow: hidden;
+            padding: 1rem;
+            @include mobile{
+                width: 85%;
+                
+                padding: 20px;
+                // margin-bottom: 30px;
+                margin: 30px auto;
+            }
+            &:hover{
+                background: rgb(214, 219, 235);
+                box-shadow: 1.4px 4px rgba(85, 85, 114, 0.549);
+                transition: 0.3s ease;
+                transform: scale(1.01);
+            }
+            .imageDiv{
+                height: 220px;
+                width: 320px;
+                margin: 10px auto;
+                overflow: hidden;
+                img{
+                    
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: 2s ease;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.1);
+                        
+                    }
+                }
+            }
+            .cardInfo{
+                padding: 1rem;
+                .destTitle{
+                    color: $BlackColor;
+                    font-size: 1.25rem;
+                }
+                .continent{
+                    gap: 0.5rem;
+                    .icon{
+                        color: $textColor;
+                        font-size: 18px;
+
+                    }
+                    .name{
+                        color: $textColor;
+                        font-size: 14px;
+                        font-weight: 400;
+                    }
+                }
+                .fees{
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    margin: 1rem 0;
+                    border-top:1.5px solid $greyText;
+                    border-bottom:1.5px solid $greyText;
+                    .grade{
+                        color: $textColor;
+                        max-width: 100px;
+                        line-height: 20px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        small{
+                            text-align: center;
+                            background-color: $GradiantColor;
+                            border-radius: 1rem;
+                            color: $WhiteColor;
+                            padding: 1px 10px;
+                            font-size: 10px;
+                        }
+                    }
+                    .price{
+                        font-size: 2rem;
+                        color: $BlackColor;
+
+                    }
+                }
+                .desc{
+                    font-size: 13.5px;
+                    color: $textColor;
+                    font-weight: 500;
+
+                }
+                .btn{
+                    margin-top: 1rem;
+                    color: $WhiteColor;
+                    font-weight: 600;
+                    justify-content: space-between;
+                    gap: 0.5rem;
+                    padding: 6px 10px;
+                    @include mobile{
+                        font-size: 0.8rem;
+                    }
+                    .icon{
+                        align-self: center;
+                        font-size: 18px;
+                        
+                    }
+                }
+            }
+        }
+    }
+}

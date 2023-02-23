@@ -1,0 +1,222 @@
+@import '../../global.scss';
+
+.footer{
+    width: 100%;
+    height: calc(100vh);
+    position: relative;
+    padding: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    .videoDiv{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        video{
+            height: 100%;
+            object-fit: cover;
+
+        }
+        &::after{
+            content:"";
+            position: absolute;
+            background: rgba(10,84,107,0.307);
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            mix-blend-mode: multiply;
+
+        }
+    }
+    .setContent{
+        width: 100%;
+        height: max-content;
+        padding: 2rem initial;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        row-gap: 2rem;
+        z-index: 200;
+        .contactDiv{
+            justify-content: space-between;
+            flex-direction: column;
+            margin-top: 5px;
+            gap: 1rem;
+            .text{
+                
+                small{
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: $WhiteColor;
+
+                }
+                h2{
+                    color: $WhiteColor;
+                    font-size: 1.8rem;
+
+                }
+            }
+            .inputDiv{
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                input{
+                    width: 100%;
+                    padding: .4rem .7rem;
+                    border-radius: 3rem;
+                    border: 1px solid $WhiteColor;
+                    outline: none;
+                    background: transparent;
+                    color: $WhiteColor;
+                    text-overflow: ellipsis;
+                    &::placeholder{
+                        color: $WhiteColor;
+                        @include mobile{
+                            font-size: 0.9rem;
+                            
+                        }
+                    }
+
+                }
+                .btn{
+                    width: 100%;
+                    justify-content: center;
+                    color: $WhiteColor;
+                    font-weight: 500;
+                    gap: .5rem;
+                    .icon{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+        .footerCard{
+            position: relative;
+            padding: 2rem 1rem 4rem;
+            gap: 2rem;
+            height: 360px;
+            @include mobile{
+                height: 410px;
+                
+            }
+            border-radius: 1rem;
+            background: $bodyColor;
+            width: 100%;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            overflow: hidden;
+            
+            .footerIntro{
+                flex-basis: 50%;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                row-gap: .5rem;
+
+            }
+            .logoDiv{
+                @include mobile{
+                    margin-top: -95px;
+                }
+                .logo{
+                    color: $BlackColor;
+                    font-weight: 600;
+                    .icon{
+                        font-size: 25px;
+                        color: $PrimaryColor;
+                        margin-right: 10px;
+                    }
+                }
+            }
+            .footerParagraph{
+                font-size: 13px;
+                color: $textColor;
+                text-align: center;
+                @include mobile{
+                    font-size: 11px;
+                }
+
+            }
+            .footerSocials{
+                column-gap: 0.5rem;
+
+
+                .icon{
+                    color: $BlackColor;
+                    font-size: 28px;
+                    &:hover{
+                        color: $PrimaryColor;
+
+                    }
+                }
+            }
+            .footerLinks{
+                width: 100%;
+                gap: 1rem;
+                display: flex;
+                margin-top: -25px;
+                padding: 0 5px;
+
+                // grid-template-columns: repeat(3, 1fr);
+                justify-content: space-around;
+                @include mobile{
+                    margin-top: -80px;
+                }
+                .linkGroup{
+                    .groupTitle{
+                        display: block;
+                        font-weight: 600;
+                        color: $BlackColor;
+                        margin-bottom: 0.5rem;
+                        @include mobile{
+                            font-size: 15px;
+                        }
+
+                    }
+                    .footerList{
+                        font-size: 15px;
+                        @include mobile{
+                            font-size: 12px;
+                        }
+                        color: $textColor;
+                        transition: 0.3s ease-in-out;
+                        .icon{
+                            font-size: 15px;
+                            color: $greyText;
+
+                        }
+                        &:hover{
+                            color: $PrimaryColor;
+                            transform: translate(7px);
+                            .icon{
+                                color: $SecondaryColor;
+
+                            }
+                        }
+                    }
+                }
+            }
+            .footerDiv{
+                flex-direction: column;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: $SecondaryColor;
+                
+                padding: .5rem 2rem;
+                
+                @include mobile{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,17 @@
+$PrimaryColor :hsl(199,100%,33%);
+$SecondaryColor:hsl(187, 85%, 43%);
+$GradiantColor:linear-gradient(to right, hsl(187,85%, 43%),hsl(199, 100%, 33%));
+$WhiteColor: #fff;
+$BlackColor: black;
+$textColor: hsl(201, 33%, 16%);
+$whiteColorDeam: hsl(0 , 0%, 93%);
+$greyText: rgb(190, 190, 190);
+$inputColor: rgb(239, 239, 239);
+$bodyColor: rgb(240, 240, 246);
+$cardBG: rgb(225, 225, 235);
+
+@mixin mobile{
+    @media(max-width:768px){
+        @content
+    }
+}
